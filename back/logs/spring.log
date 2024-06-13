@@ -6499,3 +6499,11 @@ cn.hjf.basics.exception.ZwzException: 没有文件
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
+2024-06-13T11:08:40.231+08:00  INFO 16820 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-06-13T11:08:40.247+08:00  INFO 16820 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-06-13T11:08:40.275+08:00  INFO 16820 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-06-13T11:08:40.275+08:00  INFO 16820 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-06-13T11:08:40.275+08:00  INFO 16820 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-06-13T11:08:40.283+08:00  INFO 16820 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T11:08:40.289+08:00  INFO 16820 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-06-13T11:08:40.295+08:00  INFO 16820 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
