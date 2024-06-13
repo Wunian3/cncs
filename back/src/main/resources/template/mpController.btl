@@ -1,10 +1,10 @@
 package ${entity.controllerPackage};
 
-import cn.zwz.basics.utils.PageUtil;
-import cn.zwz.basics.utils.ResultUtil;
-import cn.zwz.basics.baseVo.PageVo;
-import cn.zwz.basics.baseVo.Result;
-import cn.zwz.data.utils.ZwzNullUtils;
+import cn.hjf.basics.utils.PageUtil;
+import cn.hjf.basics.utils.ResultUtil;
+import cn.hjf.basics.baseVo.PageVo;
+import cn.hjf.basics.baseVo.Result;
+import cn.hjf.data.utils.ZwzNullUtils;
 import ${entity.entityPackage}.${entity.className};
 import ${entity.servicePackage}.I${entity.className}Service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * @author ${entity.author}
- * CSDN: Designer 小郑
+ * CSDN: Designer 何健锋
  */
 @Slf4j
 @RestController

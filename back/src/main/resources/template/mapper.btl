@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * ${entity.description} 数据处理层
  * @author ${entity.author}
- * CSDN: Designer 小郑
+ * CSDN: Designer 何健锋
  */
 public interface ${entity.className}Mapper extends BaseMapper<${entity.className}> {
 

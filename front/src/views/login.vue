@@ -5,7 +5,7 @@
             <div class="loginLeft">
                 <img src="../assets/login/logo.png" alt="" srcset="">
                 <span class="line"></span>
-                <span class="title">智能教学资源库系统</span>
+                <span class="title">智能教学系统</span>
             </div>
         </div>
         <div class="loginMiddle">
@@ -66,7 +66,7 @@
         <div class="loginDown">
             <p style="margin-top:10px">帮助 | 隐私 | 条款</p>
             <p>
-                <span>Copyright © 2020 - 至今 XXX 版权所有</span>
+                <span>Copyright © 2024 - 至今 XXX 版权所有</span>
                 <span style="display:inline-block; width:4px;height:6px"></span>
                 <a target="_blank" href="https://beian.miit.gov.cn" style="color:#848585">ICP备案 浙ICP备XXXXXXXX号</a>
                 <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=XXXXXXXXXXXXXX号">

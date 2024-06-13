@@ -2,7 +2,7 @@
 <div>
     <Row class="header">
         <img src="../../assets/logo.png" width="220px">
-        <div class="description">智能教学资源库系统</div>
+        <div class="description">人工智能教学系统</div>
     </Row>
 </div>
 </template>

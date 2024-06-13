@@ -1,6 +1,6 @@
 package ${entity.entityPackage};
 
-import cn.zwz.basics.baseClass.ZwzBaseEntity;
+import cn.hjf.basics.baseClass.ZwzBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModel;
@@ -34,7 +34,7 @@ import jakarta.persistence.Table;
 /**
  * ${entity.description} 实体类
  * @author ${entity.author}
- * CSDN: Designer 小郑
+ * CSDN: Designer 何健锋
  */
 @Data
 @Entity

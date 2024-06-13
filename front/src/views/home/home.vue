@@ -379,8 +379,8 @@ export default {
             .xuhao {
                 width: 20%;
                 min-width: 50px;
-                background-color: #ff9900;
-                border: 1px solid #ff9900;
+                background-color: #97ade9;
+                border: 1px solid #97ade9;
                 display: flex;
                 justify-content: center;
                 align-items: center;
