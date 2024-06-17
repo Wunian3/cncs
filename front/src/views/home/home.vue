@@ -4,7 +4,8 @@
         <!-- 主体部分 -->
         <div class="body">
             <!--logo标题图片 -->
-            <img class="title" src="../../assets/logo.png" alt="" />
+            <!-- <img class="title" src="../../assets/logo.png" alt="" /> -->
+            <div>智慧教育平台</div>
             <!--第二排内容 -->
             <div class="awayMenu">
                 <!--左侧 -->
@@ -27,7 +28,7 @@
             </div>
             <!--三层标题 -->
             <div class="bigTips">
-                <span style="color:rgba(255,255,255,0.8)">常用模块</span>
+                <span style="color:rgba(255,255,255,0.8)">智慧平台功能</span>
                 <span style="67.5%"> </span>
             </div>
             <!--常用按钮层 -->
@@ -379,7 +380,7 @@ export default {
             .xuhao {
                 width: 20%;
                 min-width: 50px;
-                background-color: #97ade9;
+                background-color: #ffffff;
                 border: 1px solid #97ade9;
                 display: flex;
                 justify-content: center;

@@ -3,7 +3,7 @@
     <Row justify="center" align="middle" @keydown.enter.native="submitLogin" style="height:100%">
         <div class="loginUp">
             <div class="loginLeft">
-                <img src="../assets/login/logo.png" alt="" srcset="">
+                <img src="../assets/login/logo.png" style="width: 5%;height: 100%" alt="" srcset="">
                 <span class="line"></span>
                 <span class="title">智能教学系统</span>
             </div>
@@ -51,7 +51,7 @@
                                     </Button>
                                 </Row>
                             </TabPane>
-                            <TabPane label="企业微信扫码" name="mobile">
+                            <TabPane label="微信扫码" name="mobile">
                                 <div id="qywxsmqywxsm"></div>
                             </TabPane>
                         </Tabs>
@@ -227,7 +227,7 @@ input::-webkit-input-placeholder {
 }
 a:hover{
     font-family: Microsoft YaHei;
-    color: #77C8C6;
+    color: #3d6b6a;
 }
 .login {
     height: 100%;
@@ -273,8 +273,12 @@ a:hover{
         width: 100%;
         height: 780px;
         margin: 0 auto; 
-        background-color: #e5c08e;
+        background-color: #78d4f0;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;   
         // background: linear-gradient(45deg, rgba(2, 173, 168, 0.17), rgba(0, 221, 215, 0.17)); 
     }     
     .login-background{
@@ -283,14 +287,23 @@ a:hover{
         margin: 0 auto;   
         display: flex;
         justify-content: space-between;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    height: 780px;
+    margin: 0 auto;
     }
     .loginBg{
-        width: 560px;
-        height: 684px;
-        margin-top: -20px;
+        width: 680px;
+        height: 580px;
+        margin-top: -10px;
+        margin-right: 0px;
         background-image: url(../assets/login/star.png);
         background-repeat: no-repeat;
         background-position: left bottom;
+        background-size: 150%;
+        
     }
     .loginRight{
         width: 450px;
@@ -299,7 +312,7 @@ a:hover{
         border: 1px solid #E6E6E6;
         box-shadow: 0px 2px 15px 1px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
-        margin-top: 115px;
+        margin: auto;
         position: relative;
     }
     .loginRow{
@@ -329,7 +342,7 @@ a:hover{
         width: 86px !important;
         border-radius: 2px;
         margin: 0px 42px;
-        background-color: #e5c08e;
+        background-color: #ffffff;
     }
     .ivu-tabs-nav .ivu-tabs-tab-active,.ivu-tabs-nav .ivu-tabs-tab:hover{
         color: #333333;   
@@ -442,7 +455,7 @@ a:hover{
         color: rgba(0, 0, 0, .2);
 
         :hover {
-            color: #2d8cf0;
+            color: #7fbdff;
         }
     }
 

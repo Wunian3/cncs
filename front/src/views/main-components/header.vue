@@ -1,7 +1,7 @@
 <template>
 <div>
     <Row class="header">
-        <img src="../../assets/logo.png" width="220px">
+        <img src="../../assets/logo.png" width="200px">
         <div class="description">人工智能教学系统</div>
     </Row>
 </div>
