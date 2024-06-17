@@ -15,31 +15,31 @@ export default {
     data() {
         return {
             depCountData: [{
-                    "title": "零食类",
-                    "value": 6
+                    "title": "已学习",
+                    "value": 16
                 },
                 {
-                    "title": "冷冻类",
-                    "value": 4
+                    "title": "未完成",
+                    "value": 24
                 },
                 {
-                    "title": "烟酒类",
+                    "title": "待选类",
                     "value": 8
                 },
                 {
-                    "title": "生鲜类",
+                    "title": "不及格",
                     "value": 4
                 },
                 {
-                    "title": "散装类",
-                    "value": 7
+                    "title": "及格",
+                    "value": 3
                 },
                 {
-                    "title": "水果类",
+                    "title": "良好",
                     "value": 5
                 },
                 {
-                    "title": "其他",
+                    "title": "优秀",
                     "value": 16
                 },
             ],
