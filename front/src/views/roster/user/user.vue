@@ -6,17 +6,17 @@
                 <Form-item label="姓名" prop="nickname">
                     <Input type="text" v-model="searchForm.nickname" clearable placeholder="搜索姓名" style="width: 160px" />
                 </Form-item>
-                <Form-item label="部门" prop="department">
+                <!-- <Form-item label="部门" prop="department">
                     <department-choose @on-change="handleSelectDep" placeholder="用户部门" style="width: 160px" ref="dep"></department-choose>
-                </Form-item>
+                </Form-item> -->
                 <Form-item style="margin-left:10px;" class="br">
                     <Button @click="handleSearch" type="primary" icon="ios-search" ghost shape="circle" size="small">搜索</Button>
                     <Button @click="handleReset" type="warning" ghost shape="circle" icon="md-refresh" size="small">重置</Button>
-                    <Button @click="add" type="info" icon="md-add" ghost shape="circle" size="small" :disabled="!$route.meta.permTypes.includes('add')">添加</Button>
-                    <Button @click="importModalVisible=true" type="success" icon="md-paper-plane" ghost shape="circle" size="small">导入</Button>
-                    <Button @click="excelData" type="success" icon="md-paper-plane" ghost shape="circle" size="small">导出</Button>
+                    <!-- <Button @click="add" type="info" icon="md-add" ghost shape="circle" size="small" :disabled="!$route.meta.permTypes.includes('add')">添加</Button> -->
+                    <!-- <Button @click="importModalVisible=true" type="success" icon="md-paper-plane" ghost shape="circle" size="small">导入</Button>
+                    <Button @click="excelData" type="success" icon="md-paper-plane" ghost shape="circle" size="small">导出</Button> -->
                 </Form-item>
-                <Form-item style="position:fixed;right:50px;top:130px">
+                <!-- <Form-item style="position:fixed;right:50px;top:130px">
                     <Button type="info" @click="showFilterPanelFlag = !showFilterPanelFlag" class="showFilterPanelFlag" icon="md-settings" size="small" ghost>
                         列筛选</Button>
                     <Button type="warning" @click="usingTutorialsModal = true" class="showFilterPanelFlag" icon="ios-help-circle-outline" size="small" ghost>
@@ -26,7 +26,7 @@
                         <p>2.XXXXXXXXXXXXXXXXXXXXXXXX</p>
                         <p>3.XXXXXXXXXXXXXXXXXXXXXXXX</p>
                     </Modal>
-                </Form-item>
+                </Form-item> -->
             </Form>
         </Row>
         <Row class="operation" style="position:relative;">
@@ -47,7 +47,7 @@
             <Page :current="searchForm.pageNumber" :total="total" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[20,30,50]" size="small" show-total show-elevator show-sizer></Page>
         </Row>
     </Card>
-    <Drawer title="导入数据" closable v-model="importModalVisible" width="1000">
+    <!-- <Drawer title="导入数据" closable v-model="importModalVisible" width="1000">
         <div style="display:flex;justify-content: space-between;align-items: center;">
             <Upload action :before-upload="beforeUploadImport" accept=".xls, .xlsx">
                 <Button :loading="reading" icon="ios-cloud-upload-outline" style="margin-right:10px">上传Excel文件</Button>
@@ -65,7 +65,7 @@
                 </Button>
             </div>
         </div>
-    </Drawer>
+    </Drawer> -->
     <addEdit :data="form" :type="showType" v-model="showUser" @on-submit="getUserList" />
 </div>
 </template>
@@ -96,7 +96,7 @@ export default {
                 "编号",
                 "用户名",
                 "登录账号",
-                "头像",
+                // "头像",
                 "所属部门",
                 "手机",
                 "邮箱",
@@ -104,7 +104,7 @@ export default {
                 "类型",
                 "状态",
                 "创建时间",
-                "操作",
+                // "操作",
             ],
             showFilterPanelFlag: false,
             usingTutorialsModal: false,

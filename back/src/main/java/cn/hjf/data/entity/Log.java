@@ -1,6 +1,6 @@
 package cn.hjf.data.entity;
 
-import cn.hjf.basics.baseClass.ZwzBaseEntity;
+import cn.hjf.basics.baseClass.HjfBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -25,7 +25,7 @@ import jakarta.persistence.Transient;
 @Table(name = "a_log")
 @TableName("a_log")
 @ApiModel(value = "日志")
-public class Log extends ZwzBaseEntity {
+public class Log extends HjfBaseEntity {
 
     private static final long serialVersionUID = 1L;
 

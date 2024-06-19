@@ -1,7 +1,7 @@
 package cn.hjf.basics.utils;
 
-import cn.hjf.basics.exception.ZwzException;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.basics.exception.HjfException;
+import cn.hjf.data.utils.HjfNullUtils;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 
@@ -128,8 +128,8 @@ public class CreateVerifyCode {
 
     @ApiOperation(value = "图片生成工具类")
     private void creatImage(String code) {
-        if(ZwzNullUtils.isNull(code)){
-            throw new ZwzException("图形验证码过期了，再生成个新的哦!");
+        if(HjfNullUtils.isNull(code)){
+            throw new HjfException("图形验证码过期了，再生成个新的哦!");
         }
         this.code = code;
         buffImg = new BufferedImage(imagePeripheralWidth, imagePeripheralHeight, BufferedImage.TYPE_INT_RGB);

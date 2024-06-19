@@ -17,9 +17,9 @@
             </Form>
         </Row>
         <Divider dashed />
-        <Row :gutter="16">
+        <!-- <Row :gutter="16">
             <Table :loading="loading" border stripe size="small" :columns="columns" :data="data" ref="table" sortable="custom" @on-sort-change="changeSort"></Table>
-        </Row>
+        </Row> -->
         <Row type="flex" justify="end" class="page">
             <Page :current="searchForm.pageNumber" :total="total" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[15,20,50]" size="small" show-total show-elevator show-sizer></Page>
         </Row>

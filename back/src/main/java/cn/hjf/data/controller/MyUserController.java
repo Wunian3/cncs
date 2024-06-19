@@ -8,7 +8,7 @@ import cn.hjf.basics.baseVo.PageVo;
 import cn.hjf.basics.baseVo.Result;
 import cn.hjf.data.entity.User;
 import cn.hjf.data.service.IUserService;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
@@ -37,10 +37,10 @@ public class MyUserController {
     @ApiOperation(value = "查询用户")
     public Result<IPage<User>> getByPage(@ModelAttribute User user,@ModelAttribute PageVo page){
         QueryWrapper<User> qw = new QueryWrapper<>();
-        if(user.getDepartmentId() != null && !ZwzNullUtils.isNull(user.getDepartmentId())) {
+        if(user.getDepartmentId() != null && !HjfNullUtils.isNull(user.getDepartmentId())) {
             qw.like("department_id",user.getDepartmentId());
         }
-        if(user.getNickname() != null && !ZwzNullUtils.isNull(user.getNickname())) {
+        if(user.getNickname() != null && !HjfNullUtils.isNull(user.getNickname())) {
             qw.like("nickname",user.getNickname());
         }
         IPage<User> data = iUserService.page(PageUtil.initMpPage(page),qw);

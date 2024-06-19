@@ -1,6 +1,6 @@
 package cn.hjf.test.entity;
 
-import cn.hjf.basics.baseClass.ZwzBaseEntity;
+import cn.hjf.basics.baseClass.HjfBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModel;
@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 @Table(name = "a_student")
 @TableName("a_student")
 @ApiModel(value = "学生")
-public class Student extends ZwzBaseEntity {
+public class Student extends HjfBaseEntity {
 
     private static final long serialVersionUID = 1L;
 

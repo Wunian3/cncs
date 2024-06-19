@@ -4,69 +4,69 @@
     <!-- 卡片盒子 -->
     <Card>
         <!-- 选项卡 -->
-        <Tabs type="card" v-model="tabName" @on-click="changeTab">
+        <!-- <Tabs type="card" v-model="tabName" @on-click="changeTab">
             <!-- 系统登入的日志 -->
-            <TabPane label="登录日志" icon="ios-cloud-upload-outline" name="1"></TabPane>
+            <!-- <TabPane label="登录日志" icon="ios-cloud-upload-outline" name="1"></TabPane> -->
             <!-- 系统数据中心日志 -->
-            <TabPane label="数据中心日志" icon="md-list" name="2"></TabPane>
+            <!-- <TabPane label="数据中心日志" icon="md-list" name="2"></TabPane> -->
             <!-- 系统扩展模块展示日志 -->
-            <TabPane label="扩展模块展示日志" icon="ios-people" name="3"></TabPane>
+            <!-- <TabPane label="扩展模块展示日志" icon="ios-people" name="3"></TabPane> -->
             <!-- 系统图表日志 -->
-            <TabPane label="图表日志" icon="md-laptop" name="4"></TabPane>
-        </Tabs>
+            <!-- <TabPane label="图表日志" icon="md-laptop" name="4"></TabPane> -->
+        <!-- </Tabs> --> 
         <!-- 左上方按钮层 -->
-        <Row :gutter="16">
+        <!-- <Row :gutter="16"> -->
             <!-- Form父级盒子 -->
-            <Form ref="searchForm" :model="searchForm" inline :label-width="0">
+            <!-- <Form ref="searchForm" :model="searchForm" inline :label-width="0"> -->
                 <!-- Formitem子级盒子 -->
-                <Form-item label="">
+                <!-- <Form-item label=""> -->
                     <!-- 搜索框 -->
-                    <Input type="text" v-model="searchForm.name" clearable placeholder="日志名称" style="width: 120px;" />
+                    <!-- <Input type="text" v-model="searchForm.name" clearable placeholder="日志名称" style="width: 120px;" />
                 </Form-item>
-                <Form-item label="">
+                <Form-item label=""> -->
                     <!-- 搜索框 -->
-                    <Input type="text" v-model="searchForm.ip" clearable placeholder="IP地址" style="width: 120px;" />
+                    <!-- <Input type="text" v-model="searchForm.ip" clearable placeholder="IP地址" style="width: 120px;" />
                 </Form-item>
-                <Form-item label="">
+                <Form-item label=""> -->
                     <!-- 搜索框 -->
-                    <Input type="text" v-model="searchForm.username" clearable placeholder="用户名" style="width: 120px;" />
+                    <!-- <Input type="text" v-model="searchForm.username" clearable placeholder="用户名" style="width: 120px;" />
                 </Form-item>
-                <Form-item label="">
+                <Form-item label=""> -->
                     <!-- 时间选择框 -->
-                    <DatePicker type="daterange" v-model="selectDate" format="yyyy-MM-dd" clearable @on-change="selectDateRange" placeholder="选择起始时间" style="width: 200px"></DatePicker>
+                    <!-- <DatePicker type="daterange" v-model="selectDate" format="yyyy-MM-dd" clearable @on-change="selectDateRange" placeholder="选择起始时间" style="width: 200px"></DatePicker>
                 </Form-item>
-                <Form-item class="br">
+                <Form-item class="br"> -->
                     <!-- Poptip鼠标移入提示语句 -->
-                    <Poptip trigger="hover" content="输入搜索条件后,点击搜索完成查询" placement="bottom">
+                    <!-- <Poptip trigger="hover" content="输入搜索条件后,点击搜索完成查询" placement="bottom"> -->
                         <!-- 搜索按钮 -->
-                        <Button @click="handleSearch" type="primary" icon="ios-search" size="small" ghost shape="circle">搜索</Button>
+                        <!-- <Button @click="handleSearch" type="primary" icon="ios-search" size="small" ghost shape="circle">搜索</Button>
                     </Poptip>
-                    <Poptip trigger="hover" content="将所有搜索条件删除,搜索全部内容" placement="bottom">
+                    <Poptip trigger="hover" content="将所有搜索条件删除,搜索全部内容" placement="bottom"> -->
                         <!-- 重置按钮 -->
-                        <Button @click="handleReset" type="warning" size="small" ghost shape="circle" icon="md-refresh">重置</Button>
+                        <!-- <Button @click="handleReset" type="warning" size="small" ghost shape="circle" icon="md-refresh">重置</Button>
                     </Poptip>
-                </Form-item>
+                </Form-item> -->
                 <!-- 右侧俩按钮 -->
-                <Form-item style="position:fixed;right:50px;top:160px">
-                    <Poptip trigger="hover" content="自定义表格的显示列,适应屏幕显示" placement="left">
+                <!-- <Form-item style="position:fixed;right:50px;top:160px">
+                    <Poptip trigger="hover" content="自定义表格的显示列,适应屏幕显示" placement="left"> -->
                         <!-- 筛选按钮 -->
-                        <Button type="info" @click="showFilterPanelFlag = !showFilterPanelFlag" class="showFilterPanelFlag" icon="ios-settings" size="small" ghost>列筛选
+                        <!-- <Button type="info" @click="showFilterPanelFlag = !showFilterPanelFlag" class="showFilterPanelFlag" icon="ios-settings" size="small" ghost>列筛选
                         </Button>
                     </Poptip>
-                    <Poptip trigger="hover" content="点我查看本模块的使用教程" placement="left">
+                    <Poptip trigger="hover" content="点我查看本模块的使用教程" placement="left"> -->
                         <!-- 教程按钮 -->
-                        <Button type="warning" @click="modal1 = true" class="showFilterPanelFlag" icon="md-help" size="small" ghost>使用教程
+                        <!-- <Button type="warning" @click="modal1 = true" class="showFilterPanelFlag" icon="md-help" size="small" ghost>使用教程
                         </Button>
-                    </Poptip>
+                    </Poptip> -->
                     <!-- 教程内容的弹窗，显示日志档案教程 -->
-                    <Modal v-model="modal1" title="操作日志档案教程">
+                    <!-- <Modal v-model="modal1" title="操作日志档案教程">
                         <p>1.所有用户的操作日志均在此模块</p>
                         <p>2.日志根据系统类型，在不同页签展示</p>
                     </Modal>
                 </Form-item>
             </Form>
-        </Row>
-        <Row class="operation" style="position:relative;">
+        </Row> -->
+        <!-- <Row class="operation" style="position:relative;">
             <transition>
                 <div v-show="showFilterPanelFlag" class="filter-panel">
                     <CheckboxGroup v-model="selected">
@@ -77,18 +77,18 @@
                 </div>
             </transition>
         </Row>
-        <Row>
+        <Row> -->
             <!-- 表格组件，根据后台数据生成表格 -->
-            <Table :loading="loading" border stripe size="small" :columns="columns" :height="tableHeight" :data="data" ref="table" sortable="custom" context-menu show-context-menu @on-contextmenu="handleContextMenu" @on-sort-change="changeSort" @on-selection-change="changeSelect" @on-row-click="rowClick" :row-class-name="rowClassNmae" @on-row-dblclick="lookContacts">
+            <!-- <Table :loading="loading" border stripe size="small" :columns="columns" :height="tableHeight" :data="data" ref="table" sortable="custom" context-menu show-context-menu @on-contextmenu="handleContextMenu" @on-sort-change="changeSort" @on-selection-change="changeSelect" @on-row-click="rowClick" :row-class-name="rowClassNmae" @on-row-dblclick="lookContacts">
                 <template slot="contextMenu">
                     <DropdownItem @click.native="openMessageModel" style="color: #ff9900">提示</DropdownItem>
                 </template>
             </Table>
         </Row>
-        <Row type="flex" justify="end" class="page">
+        <Row type="flex" justify="end" class="page"> -->
             <!-- 表格右下方分页器，可以选择每页显示的条数 -->
-            <Page :current="searchForm.pageNumber" :total="total" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[5, 15, 25, 35, 45, 1000]" size="small" show-total show-elevator show-sizer></Page>
-        </Row>
+            <!-- <Page :current="searchForm.pageNumber" :total="total" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[5, 15, 25, 35, 45, 1000]" size="small" show-total show-elevator show-sizer></Page>
+        </Row> -->
     </Card>
 </div>
 </template>

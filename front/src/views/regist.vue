@@ -68,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="loginDown">
+        <!-- <div class="loginDown">
             <p style="margin-top:10px">帮助 | 隐私 | 条款</p>
             <p>
                 <span>Copyright © 2020 - 至今 XXX 版权所有</span>
@@ -79,7 +79,7 @@
                     <p style="display:inline-block;color:#848585">浙公网安备 XXXXXXXXXXXXXX号</p>
                 </a>
             </p>
-        </div>
+        </div> -->
     </Row>
 </div>
 </template>

@@ -4,12 +4,12 @@
         <Row class="operation">
             <Button @click="add" type="primary" icon="md-add" ghost shape="circle" size="small" :disabled="!$route.meta.permTypes.includes('add')">添加</Button>
             <Button @click="delAll" icon="md-trash" type="error" ghost shape="circle" size="small" :disabled="!$route.meta.permTypes.includes('delete')">删除</Button>
-            <Button @click="getParentList" icon="md-refresh" type="info" ghost shape="circle" size="small">刷新</Button>
-            <Button @click="excelData" type="success" icon="md-paper-plane" ghost shape="circle" size="small">导出用户</Button>
-            <i-switch v-model="strict" size="large" style="margin-left:5px">
-                <span slot="open">级联</span>
-                <span slot="close">单选</span>
-            </i-switch>
+            <!-- <Button @click="getParentList" icon="md-refresh" type="info" ghost shape="circle" size="small">刷新</Button> -->
+            <!-- <Button @click="excelData" type="success" icon="md-paper-plane" ghost shape="circle" size="small">导出用户</Button> -->
+            <!-- <i-switch v-model="strict" size="large" style="margin-left:5px"> -->
+                <!-- <span slot="open">级联</span> -->
+                <!-- <span slot="close">单选</span> -->
+            <!-- </i-switch> -->
         </Row>
         <Row :gutter="16">
             <Col span="8">
@@ -28,7 +28,7 @@
             <Form ref="form" :model="form" :label-width="100" :rules="formValidate">
                 <Row :gutter="16">
                     <Col span="12">
-                    <FormItem label="上级部门" prop="parentTitle">
+                    <!-- <FormItem label="上级部门" prop="parentTitle">
                         <div style="display:flex;">
                             <Input v-model="form.parentTitle" readonly style="margin-right:10px;" />
                             <Poptip transfer trigger="click" placement="right-start" title="选择上级部门" width="250">
@@ -39,7 +39,7 @@
                                 </div>
                             </Poptip>
                         </div>
-                    </FormItem>
+                    </FormItem> -->
                     </Col>
                     <Col span="12">
                     <FormItem label="部门名称" prop="title">
@@ -49,14 +49,14 @@
                 </Row>
                 <Row :gutter="16">
                     <Col span="12">
-                    <FormItem label="部门领导" prop="mainHeader">
+                    <!-- <FormItem label="部门领导" prop="mainHeader">
                         <Select :loading="userLoading" not-found-text="该部门暂无用户数据" v-model="form.mainHeader" multiple filterable placeholder="选择部门领导">
                             <Option v-for="item in users" :value="item.id" :key="item.id" :label="item.nickname">
                                 <span style="margin-right:10px;">{{ item.nickname }}</span>
                                 <span style="color:#ccc;">{{ item.username }}</span>
                             </Option>
                         </Select>
-                    </FormItem>
+                    </FormItem> -->
                     </Col>
                     <Col span="12">
                     <FormItem label="部门组长" prop="viceHeader">
@@ -71,19 +71,19 @@
                 </Row>
                 <Row :gutter="16">
                     <Col span="8">
-                    <FormItem label="排序值" prop="sortOrder">
+                    <!-- <FormItem label="排序值" prop="sortOrder">
                         <Tooltip trigger="hover" placement="right" content="值越小越靠前，支持小数">
                             <InputNumber :max="1000" :min="0" v-model="form.sortOrder"></InputNumber>
                         </Tooltip>
-                    </FormItem>
+                    </FormItem> -->
                     </Col>
                     <Col span="8">
-                    <FormItem label="是否启用" prop="status">
+                    <!-- <FormItem label="是否启用" prop="status">
                         <i-switch size="large" v-model="form.status" :true-value="0" :false-value="-1">
                             <span slot="open">启用</span>
                             <span slot="close">禁用</span>
                         </i-switch>
-                    </FormItem>
+                    </FormItem> -->
                     </Col>
                     <Col span="8">
                     <Form-item class="br">
@@ -95,7 +95,7 @@
             </Col>
         </Row>
     </Card>
-    <Divider dashed>部门下用户列表</Divider>
+    <!-- <Divider dashed>部门下用户列表</Divider>
     <Card>
         <Row>
             <Table :loading="userLoading" border :columns="userColumns" :data="userData" ref="table" sortable="custom" @on-sort-change="changeSort" @on-selection-change="changeSelect" @on-row-click="rowClick" :row-class-name="rowClassName"></Table>
@@ -103,7 +103,7 @@
         <Row type="flex" justify="end" class="page">
             <Page :current="searchForm.pageNumber" :total="userTotal" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[10,20,50]" size="small" show-total show-elevator show-sizer></Page>
         </Row>
-    </Card>
+    </Card> -->
 
     <Modal :title="modalTitle" v-model="addOrEditDepartmentModal" :mask-closable="false" :width="500" on-text="提交" @on-ok="submitAdd">
         <Form ref="formAdd" :model="formAdd" :label-width="85" :rules="formValidate">

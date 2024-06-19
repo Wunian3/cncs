@@ -3,7 +3,7 @@ package cn.hjf.basics.security;
 import cn.hjf.basics.redis.RedisTemplateHelper;
 import cn.hjf.basics.security.jwt.*;
 import cn.hjf.basics.utils.SecurityUtil;
-import cn.hjf.basics.parameter.ZwzLoginProperties;
+import cn.hjf.basics.parameter.HjfLoginProperties;
 import cn.hjf.basics.security.validate.ImageValidateFilter;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebSecurityConfig {
 
     @Autowired
-    private ZwzLoginProperties zwzLoginProperties;
+    private HjfLoginProperties hjfLoginProperties;
 
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
@@ -44,7 +44,7 @@ public class WebSecurityConfig {
     private AuthenticationFailHandler authenticationFailHandler;
 
     @Autowired
-    private ZwzAccessDeniedHandler zwzAccessDeniedHandler;
+    private HjfAccessDeniedHandler hjfAccessDeniedHandler;
 
     @Autowired
     private ImageValidateFilter imageValidateFilter;
@@ -73,7 +73,7 @@ public class WebSecurityConfig {
                 .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .exceptionHandling().accessDeniedHandler(zwzAccessDeniedHandler)
+                .exceptionHandling().accessDeniedHandler(hjfAccessDeniedHandler)
                 .and()
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
@@ -106,6 +106,6 @@ public class WebSecurityConfig {
 
     @Bean
     public JwtTokenOncePerRequestFilter authenticationJwtTokenFilter() throws Exception {
-        return new JwtTokenOncePerRequestFilter(redisTemplate, securityUtil, zwzLoginProperties);
+        return new JwtTokenOncePerRequestFilter(redisTemplate, securityUtil, hjfLoginProperties);
     }
 }

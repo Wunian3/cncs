@@ -1,14 +1,14 @@
 package cn.hjf.basics.utils;
 
-import cn.hjf.basics.exception.ZwzException;
+import cn.hjf.basics.exception.HjfException;
 import cn.hjf.basics.baseVo.TokenUser;
-import cn.hjf.basics.parameter.ZwzLoginProperties;
+import cn.hjf.basics.parameter.HjfLoginProperties;
 import cn.hjf.basics.redis.RedisTemplateHelper;
 import cn.hjf.data.entity.*;
 import cn.hjf.data.service.IPermissionService;
 import cn.hjf.data.service.IRoleService;
 import cn.hjf.data.service.IUserService;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import cn.hjf.data.vo.PermissionDTO;
 import cn.hjf.data.vo.RoleDTO;
 import cn.hutool.core.util.StrUtil;
@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 public class SecurityUtil {
 
     @Autowired
-    private ZwzLoginProperties tokenProperties;
+    private HjfLoginProperties tokenProperties;
 
     @Autowired
     private RedisTemplateHelper redisTemplate;
@@ -88,8 +88,8 @@ public class SecurityUtil {
 
     @ApiOperation(value = "获取新的用户Token")
     public String getToken(String username, Boolean saveLogin){
-        if(ZwzNullUtils.isNull(username)){
-            throw new ZwzException("username不能为空");
+        if(HjfNullUtils.isNull(username)){
+            throw new HjfException("username不能为空");
         }
         boolean saved = false;
         if(saveLogin == null || saveLogin){
@@ -100,7 +100,7 @@ public class SecurityUtil {
         List<String> permissionTitleList = new ArrayList<>();
         if(tokenProperties.getSaveRoleFlag()){
             for(PermissionDTO p : selectUser.getPermissions()){
-                if(!ZwzNullUtils.isNull(p.getTitle()) && !ZwzNullUtils.isNull(p.getPath())) {
+                if(!HjfNullUtils.isNull(p.getTitle()) && !HjfNullUtils.isNull(p.getPath())) {
                     permissionTitleList.add(p.getTitle());
                 }
             }
@@ -112,18 +112,18 @@ public class SecurityUtil {
         TokenUser tokenUser = new TokenUser(selectUser.getUsername(), permissionTitleList, saved);
         // 单点登录删除旧Token
         if(tokenProperties.getSsoFlag()) {
-            String oldToken = redisTemplate.get(ZwzLoginProperties.USER_TOKEN_PRE + selectUser.getUsername());
+            String oldToken = redisTemplate.get(HjfLoginProperties.USER_TOKEN_PRE + selectUser.getUsername());
             if (StrUtil.isNotBlank(oldToken)) {
-                redisTemplate.delete(ZwzLoginProperties.HTTP_TOKEN_PRE + oldToken);
+                redisTemplate.delete(HjfLoginProperties.HTTP_TOKEN_PRE + oldToken);
             }
         }
         // 保存至Redis备查
         if(saved){
-            redisTemplate.set(ZwzLoginProperties.USER_TOKEN_PRE + selectUser.getUsername(), ansUserToken, tokenProperties.getUserSaveLoginTokenDays(), TimeUnit.DAYS);
-            redisTemplate.set(ZwzLoginProperties.HTTP_TOKEN_PRE + ansUserToken, JSON.toJSONString(tokenUser), tokenProperties.getUserSaveLoginTokenDays(), TimeUnit.DAYS);
+            redisTemplate.set(HjfLoginProperties.USER_TOKEN_PRE + selectUser.getUsername(), ansUserToken, tokenProperties.getUserSaveLoginTokenDays(), TimeUnit.DAYS);
+            redisTemplate.set(HjfLoginProperties.HTTP_TOKEN_PRE + ansUserToken, JSON.toJSONString(tokenUser), tokenProperties.getUserSaveLoginTokenDays(), TimeUnit.DAYS);
         }else{
-            redisTemplate.set(ZwzLoginProperties.USER_TOKEN_PRE + selectUser.getUsername(), ansUserToken, tokenProperties.getUserTokenInvalidDays(), TimeUnit.MINUTES);
-            redisTemplate.set(ZwzLoginProperties.HTTP_TOKEN_PRE + ansUserToken, JSON.toJSONString(tokenUser), tokenProperties.getUserTokenInvalidDays(), TimeUnit.MINUTES);
+            redisTemplate.set(HjfLoginProperties.USER_TOKEN_PRE + selectUser.getUsername(), ansUserToken, tokenProperties.getUserTokenInvalidDays(), TimeUnit.MINUTES);
+            redisTemplate.set(HjfLoginProperties.HTTP_TOKEN_PRE + ansUserToken, JSON.toJSONString(tokenUser), tokenProperties.getUserTokenInvalidDays(), TimeUnit.MINUTES);
         }
         return ansUserToken;
     }
@@ -149,7 +149,7 @@ public class SecurityUtil {
     public User getCurrUser(){
         Object selectUser = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(Objects.equals("anonymousUser",selectUser.toString())){
-            throw new ZwzException("登录失效");
+            throw new HjfException("登录失效");
         }
         UserDetails user = (UserDetails) selectUser;
         return selectByUserName(user.getUsername());

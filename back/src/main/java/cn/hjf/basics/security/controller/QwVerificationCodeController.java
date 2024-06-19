@@ -6,7 +6,7 @@ import cn.hjf.basics.log.SystemLog;
 import cn.hjf.basics.redis.RedisTemplateHelper;
 import cn.hjf.basics.security.SecurityUserDetails;
 import cn.hjf.basics.security.utils.WeiChatUtils;
-import cn.hjf.basics.security.utils.ZwzWxNoticeUtils;
+import cn.hjf.basics.security.utils.HjfWxNoticeUtils;
 import cn.hjf.basics.utils.CommonUtil;
 import cn.hjf.basics.utils.ResultUtil;
 import cn.hjf.basics.utils.SecurityUtil;
@@ -58,7 +58,7 @@ public class QwVerificationCodeController {
         /**
          * 这里需要实现判断发给谁的业务逻辑
          */
-        ZwzWxNoticeUtils.sendTuWenMessage("zwz", "OA登录验证","验证码 " + verificationCode + "，1分钟后失效","https://gitee.com/yyzwz","https://bkimg.cdn.bcebos.com/pic/37d12f2eb9389b503a80d4b38b35e5dde6116ed7", WeiChatUtils.getToken());
+        HjfWxNoticeUtils.sendTuWenMessage("zwz", "OA登录验证","验证码 " + verificationCode + "，1分钟后失效","https://gitee.com/yyzwz","https://bkimg.cdn.bcebos.com/pic/37d12f2eb9389b503a80d4b38b35e5dde6116ed7", WeiChatUtils.getToken());
         redisTemplate.set("qwsms:" + jobNumber,verificationCode,60, TimeUnit.SECONDS);
         return ResultUtil.success();
     }

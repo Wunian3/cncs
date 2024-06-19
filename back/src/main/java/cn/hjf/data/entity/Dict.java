@@ -1,6 +1,6 @@
 package cn.hjf.data.entity;
 
-import cn.hjf.basics.baseClass.ZwzBaseEntity;
+import cn.hjf.basics.baseClass.HjfBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +24,7 @@ import java.math.BigDecimal;
 @Table(name = "a_dict")
 @TableName("a_dict")
 @ApiModel(value = "数据字典")
-public class Dict extends ZwzBaseEntity {
+public class Dict extends HjfBaseEntity {
 
     private static final long serialVersionUID = 1L;
 

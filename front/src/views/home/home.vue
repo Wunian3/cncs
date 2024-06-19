@@ -16,15 +16,15 @@
                         <span>{{ name }}</span>
                     </span>
                     <!--登入地址 -->
-                    <div class="manage">登入地址：{{ location }}</div>
+                    <div class="manage">{{ location }}</div>
                 </div>
                 <!--时间，上下布局 -->
-                <div class="bottom">
+                <!-- <div class="bottom"> -->
                     <!--年月日 -->
-                    <span class="showtime">{{ showtime }}</span>
+                    <!-- <span class="showtime">{{ showtime }}</span> -->
                     <!--时分 -->
-                    <span class="showtime2">{{ showtime2 }}</span>
-                </div>
+                    <!-- <span class="showtime2">{{ showtime2 }}</span>
+                </div> -->
             </div>
             <!--三层标题 -->
             <div class="bigTips">
@@ -34,21 +34,21 @@
             <!--常用按钮层 -->
             <div class="buttonMenu">
                 <!--常用按钮盒子 -->
-                <div class="addMenuBox">
+                <!-- <div class="addMenuBox"> -->
                     <!--循环遍历按钮 -->
-                    <div class="addMenu" v-for="(item, index) in addMenuTempList" :key="index" @click="selectItem(item)">
+                    <!-- <div class="addMenu" v-for="(item, index) in addMenuTempList" :key="index" @click="selectItem(item)">
                         {{ item.title }}
-                    </div>
-                </div>
-                <!--分隔线 -->
-                <div class="shu"></div>
+                    </div> -->
+                <!-- </div> -->
+                <!-- 分隔线
+                <div class="shu"></div> -->
                 <!--右侧3按钮 -->
                 <div class="threeButton">
                     <!--按钮1 -->
                     <div class="button" @click="toDaiBanPage">
                         <div class="left">
                             <!--图片1 -->
-                            <img class="homeThreeIcon" src="../../assets/homeIcon1.png" />
+                            <!-- <img class="homeThreeIcon" src="../../assets/homeIcon1.png" /> -->
                             <!--内容1 -->
                             <span class="text">我的待办</span>
                         </div>
@@ -57,7 +57,7 @@
                     <div class="button" @click="toFaQiPage">
                         <div class="left">
                             <!--图片2 -->
-                            <img class="homeThreeIcon" src="../../assets/homeIcon2.png" />
+                            <!-- <img class="homeThreeIcon" src="../../assets/homeIcon2.png" /> -->
                             <!--内容2 -->
                             <span class="text">我的未办</span>
                         </div>
@@ -66,7 +66,7 @@
                     <div class="button" @click="toJingBanPage">
                         <div class="left">
                             <!--图片3 -->
-                            <img class="homeThreeIcon" src="../../assets/homeIcon3.png" />
+                            <!-- <img class="homeThreeIcon" src="../../assets/homeIcon3.png" /> -->
                             <!--内容3 -->
                             <span class="text">我的经办</span>
                         </div>
@@ -74,9 +74,9 @@
                 </div>
             </div>
             <!--左下角提升语句，点击跳转盒子-->
-            <div class="bottomText" @click="toOwnMenu">
+            <!-- <div class="bottomText" @click="toOwnMenu">
                 添加"常用模块"? 点我 进入个人门户设置
-            </div>
+            </div> -->
         </div>
     </Row>
 </div>
@@ -144,10 +144,10 @@ export default {
                 that.addMenuTempList = res.result;
             });
         },
-        getNowTime() {
-            this.showtime = this.format(new Date(), "yyyy年MM月dd日");
-            this.showtime2 = this.format(new Date(), "HH:mm:dd");
-        },
+        // getNowTime() {
+        //     this.showtime = this.format(new Date(), "yyyy年MM月dd日");
+        //     this.showtime2 = this.format(new Date(), "HH:mm:dd");
+        // },
     },
     mounted() {
         this.init();
@@ -278,7 +278,7 @@ export default {
 }
 
 .threeButton {
-    width: 30%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -300,7 +300,7 @@ export default {
     font-weight: 500;
     letter-spacing: 1px;
     color: rgb(255, 255, 255);
-    text-align: center;
+    // text-align: center;
 }
 
 .homeThreeIcon {
@@ -312,7 +312,7 @@ export default {
 
 .button {
     width: 60%;
-    height: 28%;
+    height: 20%;
     min-width: 310px;
     max-width: 860px;
     max-height: 80px;
@@ -334,7 +334,7 @@ export default {
 
     .text {
         color: #fff;
-        font-size: 20px;
+        font-size: 16px;
         position: relative;
     }
 

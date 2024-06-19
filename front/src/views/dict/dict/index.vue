@@ -1,7 +1,7 @@
 <template>
 <div class="search">
     <Card>
-        <Row type="flex" justify="space-between">
+        <!-- <Row type="flex" justify="space-between">
             <Col v-if="expand" span="4">
             <Row class="operation">
                 <Button @click="refreshDict" type="success" ghost size="small">搜索</Button>
@@ -68,7 +68,7 @@
                 <Page :current="searchForm.pageNumber" :total="total" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[10,20,50]" size="small" show-total show-elevator show-sizer></Page>
             </Row>
             </Col>
-        </Row>
+        </Row> -->
     </Card>
 
     <Modal :title="dictModalTitle" v-model="dictModalVisible" :mask-closable="false" :width="500">

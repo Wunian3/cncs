@@ -4,7 +4,7 @@ import cn.hjf.basics.utils.PageUtil;
 import cn.hjf.basics.utils.ResultUtil;
 import cn.hjf.basics.baseVo.PageVo;
 import cn.hjf.basics.baseVo.Result;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import ${entity.entityPackage}.${entity.className};
 import ${entity.servicePackage}.I${entity.className}Service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

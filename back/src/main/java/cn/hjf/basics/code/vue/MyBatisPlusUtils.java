@@ -1,9 +1,9 @@
 package cn.hjf.basics.code.vue;
 
+import cn.hjf.data.utils.HjfNullUtils;
 import cn.hutool.core.date.DateUtil;
 import cn.hjf.basics.code.bean.Entity;
-import cn.hjf.basics.exception.ZwzException;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.basics.exception.HjfException;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -253,7 +253,7 @@ public class MyBatisPlusUtils {
 
     @ApiOperation(value = "驼峰法转下划线")
     public static String camel2Underline(String camelContext) {
-        if (ZwzNullUtils.isNull(camelContext)) {
+        if (HjfNullUtils.isNull(camelContext)) {
             return "";
         }
         if(Objects.equals(1,camelContext.length())){
@@ -272,8 +272,8 @@ public class MyBatisPlusUtils {
 
     @ApiOperation(value = "首字母是否大小写")
     public static String name(String classTitle, boolean isFirstUpper){
-        if(ZwzNullUtils.isNull(classTitle)){
-            throw new ZwzException("类名的长度必须是正数");
+        if(HjfNullUtils.isNull(classTitle)){
+            throw new HjfException("类名的长度必须是正数");
         }
         if(Objects.equals(1,classTitle.length())){
             return isFirstUpper ? classTitle.toUpperCase() : classTitle.toLowerCase();

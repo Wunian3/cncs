@@ -2,7 +2,7 @@ package cn.hjf.basics.security;
 
 import cn.hjf.data.entity.User;
 import cn.hjf.data.service.IUserService;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         String loginFailFlag = LOGIN_FAIL_DISABLED_PRE + username;
         String value = redisTemplate.opsForValue().get(loginFailFlag);
         Long timeRest = redisTemplate.getExpire(loginFailFlag, TimeUnit.MINUTES);
-        if(!ZwzNullUtils.isNull(value)){
+        if(!HjfNullUtils.isNull(value)){
             throw new UsernameNotFoundException("试错超限，请您在" + timeRest + "分钟后再登");
         }
         QueryWrapper<User> userQw = new QueryWrapper<>();

@@ -17,17 +17,17 @@
                         <DatePicker v-model="selectDate" type="daterange" format="yyyy-MM-dd" clearable @on-change="selectDateRange" placeholder="选择起始时间" style="width: 160px"></DatePicker>
                     </Form-item>
                     <Form-item style="margin-left:-35px;" class="br">
-                        <Button @click="handleSearch" ghost shape="circle" type="primary" icon="ios-search" size="small">搜索</Button>
-                        <Button @click="handleReset" ghost shape="circle" type="warning" icon="md-refresh" size="small">重置</Button>
+                        <!-- <Button @click="handleSearch" ghost shape="circle" type="primary" icon="ios-search" size="small">搜索</Button>
+                        <Button @click="handleReset" ghost shape="circle" type="warning" icon="md-refresh" size="small">重置</Button> -->
                         <Button @click="uploadVisible=true" ghost shape="circle" type="success" icon="md-cloud-upload" size="small" :disabled="!$route.meta.permTypes.includes('add')">上传文件</Button>
-                        <Button @click="fileSaveSettingModal=true" ghost shape="circle" type="info" icon="md-settings" size="small" :disabled="!$route.meta.permTypes.includes('enable')">配置</Button>
+                        <!-- <Button @click="fileSaveSettingModal=true" ghost shape="circle" type="info" icon="md-settings" size="small" :disabled="!$route.meta.permTypes.includes('enable')">配置</Button> -->
                     </Form-item>
                 </Form>
             </Row>
         </div>
-        <Row>
+        <!-- <Row>
             <Table :loading="loading" border :columns="columns" :data="data" ref="table" sortable="custom" @on-sort-change="changeSort" @on-selection-change="changeSelect"></Table>
-        </Row>
+        </Row> -->
         <Row type="flex" justify="end" class="page">
             <Page :current="searchForm.pageNumber" :total="total" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[15, 20, 40]" size="small" show-total show-elevator show-sizer></Page>
         </Row>

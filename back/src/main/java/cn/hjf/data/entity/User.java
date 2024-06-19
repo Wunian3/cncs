@@ -1,6 +1,6 @@
 package cn.hjf.data.entity;
 
-import cn.hjf.basics.baseClass.ZwzBaseEntity;
+import cn.hjf.basics.baseClass.HjfBaseEntity;
 import cn.hjf.basics.parameter.CommonConstant;
 import cn.hjf.data.vo.PermissionDTO;
 import cn.hjf.data.vo.RoleDTO;
@@ -34,7 +34,7 @@ import java.util.List;
 @Table(name = "a_user")
 @TableName("a_user")
 @ApiModel(value = "用户")
-public class User extends ZwzBaseEntity {
+public class User extends HjfBaseEntity {
 
     private static final long serialVersionUID = 1L;
 

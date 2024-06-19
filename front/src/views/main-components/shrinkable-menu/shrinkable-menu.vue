@@ -41,13 +41,13 @@ export default {
       type: Array,
       required: true
     },
-    theme: {
-      type: String,
-      default: "dark",
-      validator(val) {
-        return util.oneOf(val, ["dark", "light"]);
-      }
-    },
+    // theme: {
+    //   type: String,
+    //   default: "dark",
+    //   validator(val) {
+    //     return util.oneOf(val, ["dark", "light"]);
+    //   }
+    // },
     beforePush: {
       type: Function
     },

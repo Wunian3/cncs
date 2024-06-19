@@ -39,7 +39,7 @@
                                     </FormItem>
                                 </Form>
                                 <Row type="flex" justify="space-between" align="middle">
-                                    <Checkbox v-model="saveLogin" size="large">是否自动登录</Checkbox>
+                                    <!-- <Checkbox v-model="saveLogin" size="large">是否自动登录</Checkbox> -->
                                     <router-link to="/regist">
                                         <a class="forget-pass">没有账号？点我注册</a>
                                     </router-link>
@@ -51,9 +51,9 @@
                                     </Button>
                                 </Row>
                             </TabPane>
-                            <TabPane label="微信扫码" name="mobile">
+                            <!-- <TabPane label="微信扫码" name="mobile">
                                 <div id="qywxsmqywxsm"></div>
-                            </TabPane>
+                            </TabPane> -->
                         </Tabs>
 
                     </Row>
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <div class="loginDown">
+        <!-- <div class="loginDown">
             <p style="margin-top:10px">帮助 | 隐私 | 条款</p>
             <p>
                 <span>Copyright © 2024 - 至今 XXX 版权所有</span>
@@ -74,7 +74,7 @@
                     <p style="display:inline-block;color:#848585">浙公网安备 XXXXXXXXXXXXXX号</p>
                 </a>
             </p>
-        </div>
+        </div> -->
     </Row>
 </div>
 </template>

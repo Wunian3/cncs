@@ -1,6 +1,6 @@
 package cn.hjf.study.entity;
 
-import cn.hjf.basics.baseClass.ZwzBaseEntity;
+import cn.hjf.basics.baseClass.HjfBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModel;
@@ -21,7 +21,7 @@ import jakarta.persistence.Table;
 @Table(name = "a_curriculum")
 @TableName("a_curriculum")
 @ApiModel(value = "课程")
-public class Curriculum extends ZwzBaseEntity {
+public class Curriculum extends HjfBaseEntity {
 
     private static final long serialVersionUID = 1L;
 

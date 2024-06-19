@@ -3,32 +3,32 @@
     <Card>
         <Row :gutter="16">
             <Col span="7">
-            <Row :gutter="16">
+            <!-- <Row :gutter="16">
                 <Col span="23">
                 <div class="tree-bar" style="overflow-y: scroll;padding-right: 50px;" :style="{maxHeight: maxHeight + 'px'}">
                     <Tree ref="tree" :data="data" show-checkbox :render="renderContent" @on-select-change="selectTree" @on-check-change="changeSelect" :check-strictly="!strict"></Tree>
                     <Spin size="large" fix v-if="loading"></Spin>
                 </div>
                 </Col>
-            </Row>
+            </Row> -->
             </Col>
             <Col span="15">
             <Row class="operation">
                 <Col span="12">
                 <Button @click="addMenu" type="primary" shape="circle" ghost icon="md-add" :disabled="!$route.meta.permTypes.includes('add')">添加菜单</Button>
                 <Button @click="deletePermissionFx" type="error" shape="circle" ghost icon="md-trash" :disabled="!$route.meta.permTypes.includes('delete')">删除菜单</Button>
-                <Button @click="getPermissionList" type="success" shape="circle" ghost icon="md-trash">刷新菜单</Button>
+                <!-- <Button @click="getPermissionList" type="success" shape="circle" ghost icon="md-trash">刷新菜单</Button>
                 <i-switch v-model="strict" size="large" style="margin-left:5px">
                     <span slot="open">级联</span>
                     <span slot="close">单选</span>
-                </i-switch>
+                </i-switch> -->
                 </Col>
                 <Col span="12">
                 <Input v-model="searchKey" suffix="ios-search" @on-change="search" placeholder="模拟搜索菜单" clearable />
                 </Col>
             </Row>
             <Divider dashed />
-            <Row :gutter="16" v-show="form.id">
+            <!-- <Row :gutter="16" v-show="form.id">
                 <Col span="24">
                 <Alert show-icon type="success">
                     当前选择的菜单：
@@ -38,8 +38,8 @@
                 </Alert>
                 </Col>
                 <Divider dashed />
-            </Row>
-            <Form ref="form" :model="form" :label-width="130" :rules="formValidate">
+            </Row> -->
+            <!-- <Form ref="form" :model="form" :label-width="130" :rules="formValidate">
                 <Row :gutter="16">
                     <Col span="12">
                     <FormItem label="类型" prop="type">
@@ -113,11 +113,11 @@
                     </Form-item>
                     </Col>
                 </Row>
-            </Form>
-            <Divider>有 {{form.title}} 权限的用户</Divider>
+            </Form> -->
+            <!-- <Divider>有 {{form.title}} 权限的用户</Divider>
             <Row :gutter="16">
                 <Table :loading="userByPermissionLoading" border stripe size="small" :columns="userByPermissionColumns" :data="userByPermissionList"></Table>
-            </Row>
+            </Row> -->
             </Col>
         </Row>
     </Card>

@@ -3,7 +3,7 @@ package cn.hjf.data.controller;
 import cn.hjf.basics.log.LogType;
 import cn.hjf.basics.log.SystemLog;
 import cn.hjf.basics.parameter.CommonConstant;
-import cn.hjf.basics.exception.ZwzException;
+import cn.hjf.basics.exception.HjfException;
 import cn.hjf.basics.redis.RedisTemplateHelper;
 import cn.hjf.basics.utils.CommonUtil;
 import cn.hjf.basics.utils.ResultUtil;
@@ -15,7 +15,7 @@ import cn.hjf.data.entity.User;
 import cn.hjf.data.service.IDepartmentHeaderService;
 import cn.hjf.data.service.IDepartmentService;
 import cn.hjf.data.service.IUserService;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
@@ -71,7 +71,7 @@ public class DepartmentController {
         User nowUser = securityUtil.getCurrUser();
         String key = REDIS_DEPARTMENT_PRE_STR + parentId + REDIS_STEP_STR + nowUser.getId();
         String value = redisTemplateHelper.get(key);
-        if(!ZwzNullUtils.isNull(value)){
+        if(!HjfNullUtils.isNull(value)){
             return new ResultUtil<List<Department>>().setData(JSON.parseArray(value,Department.class));
         }
         QueryWrapper<Department> depQw = new QueryWrapper<>();
@@ -174,11 +174,11 @@ public class DepartmentController {
         userQw.eq("department_id",id);
         long userCountInDepartment = iUserService.count(userQw);
         if(userCountInDepartment > 0L){
-            throw new ZwzException("不能删除包含员工的部门");
+            throw new HjfException("不能删除包含员工的部门");
         }
         Department department = iDepartmentService.getById(id);
         Department parentDepartment = null;
-        if(department != null && !ZwzNullUtils.isNull(department.getParentId())){
+        if(department != null && !HjfNullUtils.isNull(department.getParentId())){
             parentDepartment = iDepartmentService.getById(department.getParentId());
         }
         iDepartmentService.removeById(id);

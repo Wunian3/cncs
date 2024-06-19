@@ -20,7 +20,7 @@
                     <breadcrumb-nav :currentPath="currentPath"></breadcrumb-nav>
                 </div>
                 <div class="main-nav-menu" v-if="navType==1||navType==2">
-                    <Menu mode="horizontal" :active-name="currNav" @on-select="selectNav">
+                    <!-- <Menu mode="horizontal" :active-name="currNav" @on-select="selectNav">
                         <MenuItem v-for="(item, i) in navList.slice(0, sliceNum)" :key="i" :name="item.name">
                         <Icon :type="item.icon" v-if="navType==1" />
                         {{item.title}}
@@ -32,7 +32,7 @@
                             {{item.title}}
                             </MenuItem>
                         </Submenu>
-                    </Menu>
+                    </Menu> -->
                 </div>
                 <div class="main-nav" v-if="navType==3">
                     <Dropdown transfer @on-click="selectNav">
@@ -70,12 +70,12 @@
                         <Dropdown transfer trigger="hover" @on-click="handleClickUserDropdown">
                             <a>
                                 <span class="main-user-name">{{ username }}</span>
-                                <Icon type="md-arrow-dropdown" />
-                                <Avatar :src="avatarPath" style="background: #619fe7;margin-left: 10px;"></Avatar>
+                                <!-- <Icon type="md-arrow-dropdown" /> -->
+                                <!-- <Avatar :src="avatarPath" style="background: #619fe7;margin-left: 10px;"></Avatar> -->
                             </a>
                             <DropdownMenu slot="list">
                                 <DropdownItem name="changePass">修改密码</DropdownItem>
-                                <DropdownItem name="ownSpace">个人门户</DropdownItem>
+                                <DropdownItem name="ownSpace">个人中心</DropdownItem>
                                 <DropdownItem name="loginout" divided>退出</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -102,8 +102,8 @@
 import shrinkableMenu from "./main-components/shrinkable-menu/shrinkable-menu.vue";
 import tagsPageOpened from "./main-components/tags-page-opened.vue";
 import breadcrumbNav from "./main-components/breadcrumb-nav.vue";
-import fullScreen from "./main-components/fullscreen.vue";
-import lockScreen from "./main-components/lockscreen/lockscreen.vue";
+// import fullScreen from "./main-components/fullscreen.vue";
+// import lockScreen from "./main-components/lockscreen/lockscreen.vue";
 import circleLoading from "@/views/template/circle-loading.vue";
 import Cookies from "js-cookie";
 import util from "@/libs/util.js";
@@ -112,8 +112,8 @@ export default {
         shrinkableMenu,
         tagsPageOpened,
         breadcrumbNav,
-        fullScreen,
-        lockScreen,
+        // fullScreen,
+        // lockScreen,
         circleLoading
     },
     data() {

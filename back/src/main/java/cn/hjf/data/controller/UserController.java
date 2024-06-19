@@ -9,7 +9,7 @@ import cn.hjf.basics.baseVo.PageVo;
 import cn.hjf.basics.baseVo.Result;
 import cn.hjf.data.entity.*;
 import cn.hjf.data.service.*;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import cn.hjf.data.vo.PermissionDTO;
 import cn.hjf.data.vo.RoleDTO;
 import cn.hutool.core.util.StrUtil;
@@ -178,10 +178,10 @@ public class UserController {
     @ApiOperation(value = "查询用户")
     public Result<IPage<User>> getUserList(@ModelAttribute User user, @ModelAttribute PageVo page) {
         QueryWrapper<User> userQw = new QueryWrapper<>();
-        if(!ZwzNullUtils.isNull(user.getNickname())) {
+        if(!HjfNullUtils.isNull(user.getNickname())) {
             userQw.like("nickname",user.getNickname());
         }
-        if(!ZwzNullUtils.isNull(user.getDepartmentId())) {
+        if(!HjfNullUtils.isNull(user.getDepartmentId())) {
             userQw.eq("department_id",user.getDepartmentId());
         }
         IPage<User> userData = iUserService.page(PageUtil.initMpPage(page),userQw);
@@ -258,7 +258,7 @@ public class UserController {
                 return ResultUtil.error("手机号重复");
             }
         }
-        if(!ZwzNullUtils.isNull(u.getDepartmentId())) {
+        if(!HjfNullUtils.isNull(u.getDepartmentId())) {
             Department department = iDepartmentService.getById(u.getDepartmentId());
             if(department != null) {
                 u.setDepartmentTitle(department.getTitle());
@@ -295,7 +295,7 @@ public class UserController {
         if(iUserService.count(userQw) > 0L) {
             return ResultUtil.error("登录账号/手机号重复");
         }
-        if(!ZwzNullUtils.isNull(u.getDepartmentId())){
+        if(!HjfNullUtils.isNull(u.getDepartmentId())){
             Department department = iDepartmentService.getById(u.getDepartmentId());
             if(department != null){
                 u.setDepartmentTitle(department.getTitle());

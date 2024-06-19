@@ -5,7 +5,7 @@ import cn.hjf.basics.utils.PageUtil;
 import cn.hjf.basics.utils.ResultUtil;
 import cn.hjf.basics.baseVo.PageVo;
 import cn.hjf.basics.baseVo.Result;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import cn.hjf.data.vo.RedisVo;
 import cn.hutool.core.date.DateUtil;
 import io.swagger.annotations.Api;
@@ -98,7 +98,7 @@ public class RedisController {
     @ApiOperation(value = "查询Redis数据")
     public Result<Page<RedisVo>> getAllByPage(@RequestParam(required = false) String key,PageVo pageVo){
         List<RedisVo> list = new ArrayList<>();
-        if(!ZwzNullUtils.isNull(key)){
+        if(!HjfNullUtils.isNull(key)){
             key = STEP_STR_IN_REDIS + key + STEP_STR_IN_REDIS;
         } else{
             key = STEP_STR_IN_REDIS;

@@ -6,7 +6,7 @@ import cn.hjf.basics.utils.*;
 import cn.hjf.data.entity.Setting;
 import cn.hjf.data.service.IFileService;
 import cn.hjf.data.service.ISettingService;
-import cn.hjf.data.utils.ZwzFileUtils;
+import cn.hjf.data.utils.HjfFileUtils;
 import cn.hjf.basics.baseVo.Result;
 import cn.hjf.data.entity.File;
 import cn.hutool.core.util.StrUtil;
@@ -31,7 +31,7 @@ import java.io.InputStream;
 public class UploadController {
 
     @Autowired
-    private ZwzFileUtils zwzFileUtils;
+    private HjfFileUtils hjfFileUtils;
 
     @Autowired
     private ISettingService iSettingService;
@@ -51,7 +51,7 @@ public class UploadController {
         File f = new File();
         try {
             InputStream inputStream = file.getInputStream();
-            result = zwzFileUtils.inputStreamUpload(inputStream, fKey, file);
+            result = hjfFileUtils.inputStreamUpload(inputStream, fKey, file);
             f.setLocation(0);
             f.setName(file.getOriginalFilename());
             f.setSize(file.getSize());

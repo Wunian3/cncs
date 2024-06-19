@@ -1,6 +1,6 @@
 package cn.hjf.data.entity;
 
-import cn.hjf.basics.baseClass.ZwzBaseEntity;
+import cn.hjf.basics.baseClass.HjfBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +24,7 @@ import jakarta.persistence.Table;
 @TableName("a_setting")
 @ApiModel(value = "配置")
 @NoArgsConstructor
-public class Setting extends ZwzBaseEntity {
+public class Setting extends HjfBaseEntity {
 
     private static final long serialVersionUID = 1L;
 

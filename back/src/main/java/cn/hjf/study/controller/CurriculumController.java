@@ -4,7 +4,7 @@ import cn.hjf.basics.utils.PageUtil;
 import cn.hjf.basics.utils.ResultUtil;
 import cn.hjf.basics.baseVo.PageVo;
 import cn.hjf.basics.baseVo.Result;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import cn.hjf.study.entity.Curriculum;
 import cn.hjf.study.service.ICurriculumService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -54,13 +54,13 @@ public class CurriculumController {
     @ApiOperation(value = "查询课程")
     public Result<IPage<Curriculum>> getByPage(@ModelAttribute Curriculum curriculum ,@ModelAttribute PageVo page){
         QueryWrapper<Curriculum> qw = new QueryWrapper<>();
-        if(!ZwzNullUtils.isNull(curriculum.getTitle())) {
+        if(!HjfNullUtils.isNull(curriculum.getTitle())) {
             qw.like("title",curriculum.getTitle());
         }
-        if(!ZwzNullUtils.isNull(curriculum.getContent())) {
+        if(!HjfNullUtils.isNull(curriculum.getContent())) {
             qw.like("content",curriculum.getContent());
         }
-        if(!ZwzNullUtils.isNull(curriculum.getStatus())) {
+        if(!HjfNullUtils.isNull(curriculum.getStatus())) {
             qw.eq("status",curriculum.getStatus());
         }
         IPage<Curriculum> data = iCurriculumService.page(PageUtil.initMpPage(page),qw);

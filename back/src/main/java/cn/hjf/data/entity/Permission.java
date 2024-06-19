@@ -1,6 +1,6 @@
 package cn.hjf.data.entity;
 
-import cn.hjf.basics.baseClass.ZwzBaseEntity;
+import cn.hjf.basics.baseClass.HjfBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +27,7 @@ import java.util.List;
 @Table(name = "a_permission")
 @TableName("a_permission")
 @ApiModel(value = "菜单权限")
-public class Permission extends ZwzBaseEntity {
+public class Permission extends HjfBaseEntity {
 
     private static final long serialVersionUID = 1L;
 

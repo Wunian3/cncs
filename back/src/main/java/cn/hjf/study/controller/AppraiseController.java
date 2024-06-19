@@ -1,5 +1,6 @@
 package cn.hjf.study.controller;
 
+import cn.hjf.data.utils.HjfNullUtils;
 import cn.hutool.core.date.DateUtil;
 import cn.hjf.basics.utils.PageUtil;
 import cn.hjf.basics.utils.ResultUtil;
@@ -7,7 +8,6 @@ import cn.hjf.basics.baseVo.PageVo;
 import cn.hjf.basics.baseVo.Result;
 import cn.hjf.basics.utils.SecurityUtil;
 import cn.hjf.data.entity.User;
-import cn.hjf.data.utils.ZwzNullUtils;
 import cn.hjf.study.entity.Appraise;
 import cn.hjf.study.entity.Curriculum;
 import cn.hjf.study.service.IAppraiseService;
@@ -83,13 +83,13 @@ public class AppraiseController {
     @ApiOperation(value = "查询课程评价")
     public Result<IPage<Appraise>> getByPage(@ModelAttribute Appraise appraise ,@ModelAttribute PageVo page){
         QueryWrapper<Appraise> qw = new QueryWrapper<>();
-        if(!ZwzNullUtils.isNull(appraise.getCurriculumName())) {
+        if(!HjfNullUtils.isNull(appraise.getCurriculumName())) {
             qw.like("curriculum_name",appraise.getCurriculumName());
         }
-        if(!ZwzNullUtils.isNull(appraise.getUserName())) {
+        if(!HjfNullUtils.isNull(appraise.getUserName())) {
             qw.like("user_name",appraise.getUserName());
         }
-        if(!ZwzNullUtils.isNull(appraise.getContent())) {
+        if(!HjfNullUtils.isNull(appraise.getContent())) {
             qw.like("content",appraise.getContent());
         }
         IPage<Appraise> data = iAppraiseService.page(PageUtil.initMpPage(page),qw);

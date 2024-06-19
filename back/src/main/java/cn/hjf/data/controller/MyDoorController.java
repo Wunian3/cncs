@@ -9,7 +9,7 @@ import cn.hjf.data.entity.Permission;
 import cn.hjf.data.entity.User;
 import cn.hjf.data.service.IPermissionService;
 import cn.hjf.data.service.IUserService;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.Data;
@@ -51,7 +51,7 @@ public class MyDoorController {
         user = iUserService.getById(user.getId());
         List<MyDoorMenuClass> ans = new ArrayList<>();
         String myDoor = user.getMyDoor();
-        if(ZwzNullUtils.isNull(myDoor)) {
+        if(HjfNullUtils.isNull(myDoor)) {
             return new ResultUtil().setData(ans);
         }
         String[] zwz666s = myDoor.split("ZWZ666");
@@ -78,7 +78,7 @@ public class MyDoorController {
         user = iUserService.getById(user.getId());
         List<MyDoorMenuClass> ans = new ArrayList<>();
         String myDoor = user.getMyDoor();
-        if(ZwzNullUtils.isNull(myDoor)) {
+        if(HjfNullUtils.isNull(myDoor)) {
             ans.add(getNullMenu());ans.add(getNullMenu());ans.add(getNullMenu());
             ans.add(getNullMenu());ans.add(getNullMenu());ans.add(getNullMenu());
             return new ResultUtil().setData(ans);
@@ -113,7 +113,7 @@ public class MyDoorController {
         User user = securityUtil.getCurrUser();
         user = iUserService.getById(user.getId());
         if(user != null) {
-            if(ZwzNullUtils.isNull(str)) {
+            if(HjfNullUtils.isNull(str)) {
                 user.setMyDoor("");
                 iUserService.saveOrUpdate(user);
             } else {

@@ -7,7 +7,7 @@ import cn.hjf.basics.baseVo.Result;
 import cn.hjf.basics.utils.SecurityUtil;
 import cn.hjf.data.entity.User;
 import cn.hjf.data.service.IUserService;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import cn.hjf.data.vo.AntvVo;
 import cn.hjf.study.entity.Assignment;
 import cn.hjf.study.entity.Curriculum;
@@ -113,10 +113,10 @@ public class AssignmentController {
         if(iUserService.count(userQw) < 1L) {
             qw.eq("user_id",currUser.getId());
         }
-        if(!ZwzNullUtils.isNull(assignment.getCurriculumName())) {
+        if(!HjfNullUtils.isNull(assignment.getCurriculumName())) {
             qw.like("curriculum_name",assignment.getCurriculumName());
         }
-        if(!ZwzNullUtils.isNull(assignment.getTitle())) {
+        if(!HjfNullUtils.isNull(assignment.getTitle())) {
             qw.like("title",assignment.getTitle());
         }
         IPage<Assignment> data = iAssignmentService.page(PageUtil.initMpPage(page),qw);

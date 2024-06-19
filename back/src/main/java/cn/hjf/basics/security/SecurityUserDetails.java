@@ -2,7 +2,7 @@ package cn.hjf.basics.security;
 
 import cn.hjf.basics.parameter.CommonConstant;
 import cn.hjf.data.entity.User;
-import cn.hjf.data.utils.ZwzNullUtils;
+import cn.hjf.data.utils.HjfNullUtils;
 import cn.hjf.data.vo.PermissionDTO;
 import cn.hjf.data.vo.RoleDTO;
 import io.swagger.annotations.ApiOperation;
@@ -35,7 +35,7 @@ public class SecurityUserDetails extends User implements UserDetails {
         // 菜单权限
         if(permissions!=null && permissions.size() > 0){
             for (PermissionDTO dto : permissions) {
-                if(!ZwzNullUtils.isNull(dto.getTitle()) && !ZwzNullUtils.isNull(dto.getPath())) {
+                if(!HjfNullUtils.isNull(dto.getTitle()) && !HjfNullUtils.isNull(dto.getPath())) {
                     grantedAuthorityList.add(new SimpleGrantedAuthority(dto.getTitle()));
                 }
             }
@@ -43,7 +43,7 @@ public class SecurityUserDetails extends User implements UserDetails {
         // 角色
         if(roles != null && roles.size() > 0){
             roles.forEach(role -> {
-                if(!ZwzNullUtils.isNull(role.getName())){
+                if(!HjfNullUtils.isNull(role.getName())){
                     grantedAuthorityList.add(new SimpleGrantedAuthority(role.getName()));
                 }
             });
